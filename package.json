@@ -22,7 +22,8 @@
     "methods": "0.0.1",
     "async": "0.1.x",
     "lingo": "0.0.x",
-    "debug": "0.7.x"
+    "debug": "0.7.x",
+    "underscore" : "1.x.x"
   },
   "devDependencies": {
     "vows": "0.6.x"

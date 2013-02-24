@@ -1,3 +1,20 @@
+# Regarding ´nailz´
+I've decided to entirely remove the nailz repository. If anybody wants to continue on the project feel free to do it on your own initiative. 
+
+__My efforts are now being put on ´Locomotive´.__
+
+# Using my _lcm_ build
+I've not yet pushed anything to the locomotive repository. If you want to use my current version of the CLI clone this repository into your npm directory. Make sure you have a symlink to the lcm binary in your npm bin folder.
+
+## Currently non pushed features
+
+### CLI Generate
+The `generate` command acts a lot like the rails generate command. It's used to get going quickly and bootstraps view files, controller files and routes.
+
+	$ lcm generate Books sell buy list  
+
+Would add the Books controller, create the three methods, add the corresponding routes and add the view file for each method.
+
 # Locomotive
 [http://locomotivejs.org](http://locomotivejs.org/)
 

@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
 var program = require('commander')
-  , locomotive = require('../');
+  , locomotive = require('../')
+  , _ = require('underscore');
 
 program.version(locomotive.version);
 
@@ -10,6 +11,22 @@ program.command('create')
   .action(function() {
     locomotive.cli.create(program.args.shift() || '.');
   });
+
+program.command('generate <generator>')
+	.usage('<generator> <args ...> [options]')
+	.description('-> generate locomotive components')
+	.action(function(generator) {
+		locomotive.cli.generate(
+			generator
+			, _.rest(process.argv, ( _.indexOf(process.argv, generator) +1 ))
+		);
+	})
+	.on('--help', function () {
+		console.log("  Available generators:");
+		console.log("");
+		console.log("     controller");
+		console.log("");
+	});
 
 program.command('server')
   .description('-> start Locomotive server')
