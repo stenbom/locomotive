@@ -6,14 +6,20 @@ __My efforts are now being put on ´Locomotive´.__
 # Using my _lcm_ build
 I've not yet pushed anything to the locomotive repository. If you want to use my current version of the CLI clone this repository into your npm directory. Make sure you have a symlink to the lcm binary in your npm bin folder.
 
-## Currently non pushed features
 
 ### CLI Generate
-The `generate` command acts a lot like the rails generate command. It's used to get going quickly and bootstraps view files, controller files and routes.
+The `generate` command acts a lot like the rails generate command. It's used to bootstrap your application components.
 
-	$ lcm generate Books sell buy list  
+	$ lcm generate controller Books sell buy list  
 
-Would add the Books controller, create the three methods, add the corresponding routes and add the view file for each method.
+Would add the Books controller (using the controller generator), create the three methods, add the corresponding routes and add the view file for each method.
+
+#### Adding your own generator
+You can create your own generators without modifying the source easily. The generator function checks if a module exists by the name convention `locomotive-generator-<name>` and calls upon it if it's found. Check the source for the native generators to see how to write a generator.
+
+
+###### Example
+Creating a node_module named `locomotive-generator-module` would expose it as `lcm generate module <args>` to the CLI. 
 
 # Locomotive
 [http://locomotivejs.org](http://locomotivejs.org/)
